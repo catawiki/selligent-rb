@@ -24,4 +24,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec', '~> 3.0'
   s.add_development_dependency 'rspec_junit_formatter', '~> 0.3'
   s.add_development_dependency 'rubocop', '~> 0.5'
+
+  s.add_dependency 'faraday', '>= 0.9.2'
 end
