@@ -2,31 +2,27 @@ require 'faraday'
 
 module Selligent
   module Connection
-    include Authentication
-
     def get(path, params = {})
-      uri = URI::HTTP.build(path: path, query: URI::QueryParams.dump(params))
-      
-      connection.get(path) do |req|
-        req.headers['Authentication'] = auth_header(uri, method: 'GET')
-      end
+      connection.get uri(path, params)
     end
 
     def post(path, params = {})
-      connection.post(path) do |req|
-        req.headers['Authentication'] = auth_header(uri, method: 'POST')
-      end
+      connection.post uri(path, params)
     end
 
     def put(path, params = {})
-      connection.put(path) do |req|
-        req.headers['Authentication'] = auth_header(uri, method: 'PUT')
-      end
+      connection.put uri(path, params)
+    end
+
+    def uri(path, params)
+      URI::HTTP.build(path: path, query: URI::QueryParams.dump(params))
     end
 
     def connection
       # TODO: To Config
-      Faraday.new(url: 'http://www.selligent.com')
+      Faraday.new(url: 'http://www.selligent.com') do |conn|
+        conn.request :selligent_auth
+      end
     end
   end
 end
