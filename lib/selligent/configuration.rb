@@ -1,3 +1,5 @@
+require 'selligent/auth_middleware'
+
 module Selligent
   # Configuration options for the Selligent Client.
   module Configuration
@@ -20,6 +22,8 @@ module Selligent
 
     def configure
       yield self
+      Selligent::AuthMiddleware.setup!
+      nil
     end
   end
 end
