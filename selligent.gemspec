@@ -20,8 +20,4 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_development_dependency 'bundler', '~> 1.16'
-  s.add_development_dependency 'rake', '~> 10.0'
-  s.add_development_dependency 'rspec', '~> 3.0'
-  s.add_development_dependency 'rspec_junit_formatter', '~> 0.3'
-  s.add_development_dependency 'rubocop', '~> 0.5'
 end
