@@ -16,11 +16,7 @@ module Selligent
     end
 
     def inspect
-      inspected = super
-
-      inspected = inspected.gsub! @api_key, '*******' if @api_key
-
-      inspected
+      super.gsub! @api_key, '*******' if @api_key
     end
   end
 end
