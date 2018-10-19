@@ -8,17 +8,17 @@ module Selligent
   # The actual Selligent client
   class Client
     include Selligent::Authorization
-    include Selligent::Configuration
     include Selligent::Connection
 
+    attr_reader :config
+
     def initialize(options = {})
-      options.each do |key, value|
-        Selligent::Configuration.set(key, value)
-      end
+      Selligent::AuthMiddleware.setup!
+      @config = Selligent::Configuration.new(options)
     end
 
-    def inspect
-      super.gsub! @api_key, '*******' if @api_key
+    def configure
+      yield config
     end
   end
 end

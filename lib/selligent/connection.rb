@@ -18,7 +18,7 @@ module Selligent
     private
 
     def connection
-      @connection ||= Faraday.new(url: host) do |conn|
+      @connection ||= Faraday.new(url: config.host) do |conn|
         conn.request :url_encoded
         conn.request :selligent_auth
 
