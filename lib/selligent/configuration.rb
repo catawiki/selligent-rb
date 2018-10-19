@@ -1,4 +1,4 @@
-require 'selligent/auth_middleware'
+# frozen_string_literal: true
 
 module Selligent
   # Configuration options for the Selligent Client.

@@ -3,6 +3,7 @@
 require 'selligent/authorization'
 require 'selligent/configuration'
 require 'selligent/connection'
+require 'selligent/middlewares/authorization'
 
 module Selligent
   # The actual Selligent client
@@ -13,7 +14,7 @@ module Selligent
     attr_reader :config
 
     def initialize(options = {})
-      Selligent::AuthMiddleware.setup!
+      Selligent::Middlewares::Authorization.setup!
       @config = Selligent::Configuration.new(options)
     end
 
