@@ -15,10 +15,17 @@ module Selligent
 
     def auth_header(env)
       timestamp = time.now.to_i
-      data = "#{timestamp}-#{env[:method]}-#{env[:url]}"
-      hash_code = OpenSSL::HMAC.hexdigest('sha256', config.api_key, data)
+      "hmac #{config.username}:#{auth_hash(env, timestamp)}:#{timestamp}"
+    end
 
-      "hmac #{config.username}:#{hash_code}:#{timestamp}"
+    private
+
+    def auth_hash(env, timestamp)
+      OpenSSL::HMAC.hexdigest(
+        'sha256',
+        config.api_key,
+        "#{timestamp}-#{env[:method]}-#{env[:url]}"
+      )
     end
   end
 end
