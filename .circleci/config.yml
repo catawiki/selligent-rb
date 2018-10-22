@@ -1,0 +1,56 @@
+version: 2.0
+
+jobs:
+  ruby2.2:
+    docker:
+      - image: circleci/ruby:2.2
+    steps:
+      - checkout
+      - restore_cache:
+          key: gemfile-2-2-{{ checksum "Gemfile" }}-{{ checksum "selligent.gemspec" }}
+      - run: bundle install -j3 --path vendor/bundle
+      - save_cache:
+          key: gemfile-2-2-{{ checksum "Gemfile" }}-{{ checksum "selligent.gemspec" }}
+          paths:
+            - vendor/bundle
+      - run: bundle check --path vendor/bundle
+      - run: bundle exec rubocop
+      - run: |
+          bundle exec rspec --profile 10 \
+                            --format RspecJunitFormatter \
+                            --out tmp/results/rspec.xml \
+                            --format progress \
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      - store_test_results:
+          path: tmp/results
+
+  ruby2.4:
+    docker:
+      - image: circleci/ruby:2.4
+    steps:
+      - checkout
+      - restore_cache:
+          key: gemfile-2-4-{{ checksum "Gemfile" }}-{{ checksum "selligent.gemspec" }}
+      - run: bundle install -j3 --path vendor/bundle
+      - save_cache:
+          key: gemfile-2-4-{{ checksum "Gemfile" }}-{{ checksum "selligent.gemspec" }}
+          paths:
+            - vendor/bundle
+      - run: bundle check --path vendor/bundle
+      - run: bundle exec rubocop
+      - run: |
+          bundle exec rspec --profile 10 \
+                            --format RspecJunitFormatter \
+                            --out tmp/results/rspec.xml \
+                            --format progress \
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      - store_test_results:
+          path: tmp/results
+
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - ruby2.2
+      - ruby2.4
