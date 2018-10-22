@@ -5,16 +5,15 @@ require 'openssl'
 module Selligent
   # Implements the authorization header for Selligent requests
   class Authorizer
-    attr_reader :config, :time
-    private :config, :time
+    attr_reader :config
+    private :config
 
-    def initialize(config, time: Time)
+    def initialize(config)
       @config = config
-      @time = time
     end
 
     def auth_header(env)
-      timestamp = time.now.to_i
+      timestamp = Time.now.to_i
       "hmac #{config.username}:#{auth_hash(env, timestamp)}:#{timestamp}"
     end
 
