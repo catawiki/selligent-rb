@@ -6,6 +6,7 @@
 Selligent.configure do |c|
   c.username = 'the_user'
   c.host = 'www.selligent.com'
-  c.api_key = 'secret_key'
+  c.api_key = 'key'
+  c.api_secret = 'secret'
 end
 ```
