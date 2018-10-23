@@ -7,6 +7,7 @@ RSpec.describe Selligent::Authorizer do
 
   subject(:authorizer) { described_class.new(config) }
 
+  # rubocop:disable Metrics/LineLength
   describe '.auth_header' do
     before do
       Timecop.freeze(Time.new(2018, 10, 19))
@@ -17,4 +18,5 @@ RSpec.describe Selligent::Authorizer do
       expect(authorizer.auth_header(env)).to eq(expected)
     end
   end
+  # rubocop:enable Metrics/LineLength
 end
