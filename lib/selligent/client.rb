@@ -21,5 +21,9 @@ module Selligent
     def configure
       yield config
     end
+
+    def base_url
+      "/Portal/Api/organizations/#{config.organization}"
+    end
   end
 end

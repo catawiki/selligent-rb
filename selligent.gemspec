@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'bundler', '~> 1.16'
   s.add_dependency 'faraday'
+  s.add_dependency 'faraday_middleware'
 end

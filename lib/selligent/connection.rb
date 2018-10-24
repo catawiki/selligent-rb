@@ -1,4 +1,5 @@
 require 'faraday'
+require 'faraday_middleware'
 
 module Selligent
   # Network layer
@@ -7,11 +8,11 @@ module Selligent
       connection.get url, options
     end
 
-    def post
+    def post(url, options = {})
       connection.post url, options
     end
 
-    def put
+    def put(url, options = {})
       connection.put url, options
     end
 
@@ -19,9 +20,10 @@ module Selligent
 
     def connection
       @connection ||= Faraday.new(url: config.host) do |conn|
-        conn.request :url_encoded
+        conn.request :json
         conn.request :selligent_auth
 
+        conn.response :json
         conn.adapter Faraday.default_adapter
       end
     end
