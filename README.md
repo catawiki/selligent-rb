@@ -8,5 +8,6 @@ Selligent.configure do |c|
   c.host = 'www.selligent.com'
   c.api_key = 'key'
   c.api_secret = 'secret'
+  c.organization = 'catawiki'
 end
 ```
