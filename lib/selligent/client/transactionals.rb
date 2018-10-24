@@ -8,14 +8,14 @@ module Selligent
     module Transactionals
       # Returns a list of the transactional journeys defined on the organization.
       def transactionals
-        get "/organizations/#{Selligent.config.organization}/journeys/transactional"
+        get "#{base_url}/journeys/transactional"
       end
 
       # Returns information on the transactional journey with the given api name.
       #
       # @param api_name [String] The api name
       def transactional(api_name)
-        get "/organizations/#{Selligent.config.organization}/journeys/transactional/#{api_name}"
+        get "#{base_url}/journeys/transactional/#{api_name}"
       end
 
       # Sends (multiple) transactional messages (email, mobile push, sms)
@@ -47,7 +47,7 @@ module Selligent
       # @param model [Hash] The model containing the data that should be sent
       # @option model [Array] :items The send requests
       def send_transactional(api_name, model)
-        post "/organizations/#{Selligent.config.organization}/journeys/transactional/#{api_name}/send", model
+        post "#{base_url}/journeys/transactional/#{api_name}/send", model
       end
 
       # Create and/or update a user profile and then trigger the transactional message
@@ -91,7 +91,7 @@ module Selligent
       # @param model [Hash] The model containing the data that should be sent
       # @option model [Array] :items The request bodies
       def update_profile_and_send_transactional(api_name, model)
-        post "/organizations/#{Selligent.config.organization}/journeys/transactional/#{api_name}/updateProfileAndSend", model
+        post "#{base_url}/journeys/transactional/#{api_name}/updateProfileAndSend", model
       end
 
       # Returns a list of transactional-status-objects for the messages that correspond to
@@ -100,7 +100,7 @@ module Selligent
       #
       # @param ids [Array<String>] The message identifiers
       def transactionals_status(ids)
-        post "/organizations/#{Selligent.config.organization}/journeys/transactional/status", ids
+        post "#{base_url}/journeys/transactional/status", ids
       end
 
       # Returns a transactional-status-object for the transactional journey with the given
@@ -108,7 +108,7 @@ module Selligent
       #
       # @param id [String] The message id
       def transactional_status(id)
-        get "/organizations/#{organization}/journeys/transactional/status/#{id}"
+        get "#{base_url}/journeys/transactional/status/#{id}"
       end
     end
   end
