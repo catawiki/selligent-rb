@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday'
 require 'faraday_middleware'
 
@@ -23,7 +25,8 @@ module Selligent
         conn.request :json
         conn.request :selligent_auth
 
-        conn.response :json
+        conn.response :json, parser_options: { symbolize_names: true }
+
         conn.adapter Faraday.default_adapter
       end
     end
