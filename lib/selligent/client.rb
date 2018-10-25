@@ -2,6 +2,7 @@
 
 require 'selligent/configuration'
 require 'selligent/connection'
+require 'selligent/client/lists'
 require 'selligent/client/transactionals'
 require 'selligent/middlewares/authorization'
 
@@ -11,6 +12,7 @@ module Selligent
     extend Forwardable
 
     include Selligent::Connection
+    include Selligent::Client::Lists
     include Selligent::Client::Transactionals
 
     attr_reader :config

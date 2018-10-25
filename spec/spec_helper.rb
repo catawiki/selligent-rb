@@ -19,4 +19,23 @@ RSpec.configure do |config|
 
   config.order = :random
   srand config.seed
+
+  config.shared_context_metadata_behavior = :apply_to_host_groups
+end
+
+RSpec.shared_context 'base_client', shared_context: :metadata do
+  let(:base_client) do
+    instance_double(
+      Selligent::Client,
+      get: nil,
+      post: nil,
+      put: nil,
+      delete: nil,
+      base_url: base_url
+    )
+  end
+end
+
+RSpec.configure do |config|
+  config.include_context 'base_client', include_shared: true
 end
