@@ -1,15 +1,9 @@
 require 'spec_helper'
 
 RSpec.describe Selligent::Client::Data do
-  subject(:client) do
-    instance_double(
-      Selligent::Client,
-      get: nil,
-      post: nil,
-      delete: nil,
-      base_url: base_url
-    ).extend(described_class)
-  end
+  include_context 'base_client'
+
+  subject(:client) { base_client.extend(described_class) }
 
   let(:base_url) { '/Portal/Api/organizations/my-org' }
   let(:api_name) { 'campaign' }
