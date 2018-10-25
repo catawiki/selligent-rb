@@ -48,7 +48,11 @@ module Selligent
         delete "#{base_url}/lists/#{list_name}", options
       end
 
+      # Get details for the list with the given name
+      #
+      # @param list_name [String] The list API name
       def list(list_name)
+        get "#{base_url}/lists/#{list_name}"
       end
 
       def update_list(list_name)
