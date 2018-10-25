@@ -92,7 +92,7 @@ module Selligent
       # Get list fields for the given list
       #
       # @param list_name [String] The list API name
-      def list_fields(list_name)
+      def fields(list_name)
         get "#{base_url}/lists/#{list_name}/fields"
       end
 
@@ -114,7 +114,7 @@ module Selligent
       #
       # @param list_name [String] The list API name
       # @param model [Hash] The model containing the data that should be sent
-      def create_list_fields(list_name, model)
+      def create_fields(list_name, model)
         post "#{base_url}/lists/#{list_name}/fields", model
       end
 
@@ -122,7 +122,7 @@ module Selligent
       #
       # @param list_name [String] The list API name
       # @param field_name [String] The field name
-      def delete_list_field(list_name, field_name)
+      def delete_field(list_name, field_name)
         delete "#{base_url}/lists/#{list_name}/fields/#{field_name}"
       end
 
@@ -138,14 +138,14 @@ module Selligent
       # @param list_name [String] The list API name
       # @param field_name [String] The field name
       # @param model [Hash] The model containing the data that should be sent
-      def update_list_field(list_name, field_name, model)
+      def update_field(list_name, field_name, model)
         put "#{base_url}/lists/#{list_name}/fields/#{field_name}", model
       end
 
       # Get the number of records for the given list
       #
       # @param list_name [String] The list API name
-      def list_records_count(list_name)
+      def records_count(list_name)
         get "#{base_url}/lists/#{list_name}/records"
       end
 
@@ -153,14 +153,14 @@ module Selligent
       #
       # @param list_name [String] The list API name
       # @param record_id [Integer] The record id
-      def delete_list_record(list_name, record_id)
+      def delete_record(list_name, record_id)
         delete "#{base_url}/lists/#{list_name}/records/#{record_id}"
       end
 
       # Get all relations associated with a list
       #
       # @param list_name [String] The list API name
-      def list_relations(list_name)
+      def relations(list_name)
         get "#{base_url}/lists/#{list_name}/relations"
       end
 
@@ -192,7 +192,7 @@ module Selligent
       #
       # @param list_name [String] The list API name
       # @param model [Hash] The model containing the data that should be sent
-      def create_list_relation(list_name, model)
+      def create_relation(list_name, model)
         post "#{base_url}/lists/#{list_name}/relations", model
       end
 
@@ -200,7 +200,7 @@ module Selligent
       #
       # @param list_name [String] The list API name
       # @param scope [String] The scope name of the relation
-      def delete_list_relation(list_name, scope)
+      def delete_relation(list_name, scope)
         delete "#{base_url}/lists/#{list_name}/relations/#{scope}"
       end
 
@@ -208,7 +208,7 @@ module Selligent
       #
       # @param list_name [String] The list API name
       # @param scope [String] The scope name of the relation
-      def list_relation(list_name, scope)
+      def relation(list_name, scope)
         get "#{base_url}/lists/#{list_name}/relations/#{scope}"
       end
 
@@ -237,7 +237,7 @@ module Selligent
       # @param list_name [String] The list API name
       # @param scope [String] The scope name of the relation
       # @param model [Hash] The model containing the data that should be sent
-      def update_list_relation(list_name, scope, model)
+      def update_relation(list_name, scope, model)
         put "#{base_url}/lists/#{list_name}/relations/#{scope}", model
       end
 
@@ -248,7 +248,7 @@ module Selligent
       # @option options [String] :search Search a segment by name, description or tags
       # @option options [Integer] :skip Specify index to start picking segment items from
       # @option options [Integer] :take Specify count for the number of segments to be taken
-      def list_segments(list_name, options = {})
+      def segments(list_name, options = {})
         get "#{base_url}/lists/#{list_name}/segments", options
       end
 
@@ -256,7 +256,7 @@ module Selligent
       #
       # @param list_name [String] The list API name
       # @param segment_name [String] The name of the segment
-      def list_segment(list_name, segment_name)
+      def segment(list_name, segment_name)
         get "#{base_url}/lists/#{list_name}/segments/#{segment_name}"
       end
     end
