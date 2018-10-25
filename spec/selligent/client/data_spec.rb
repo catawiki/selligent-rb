@@ -43,25 +43,29 @@ RSpec.describe Selligent::Client::Data do
     it 'calls delete_data_from_segment endpoint' do
       client.delete_data_from_segment(api_name, segment_api_name)
 
-      expect(client).to have_received(:delete).with("#{base_url}/lists/#{api_name}/segments/#{segment_api_name}/data")
+      expect(client)
+        .to have_received(:delete)
+        .with("#{base_url}/lists/#{api_name}/segments/#{segment_api_name}/data")
     end
   end
-
 
   describe '.load_data_into_segment' do
     it 'calls load_data_into_segment endpoint' do
       client.load_data_into_segment(api_name, segment_api_name)
 
-      expect(client).to have_received(:post).with("#{base_url}/lists/#{api_name}/segments/#{segment_api_name}/data/load")
+      expect(client)
+        .to have_received(:post)
+        .with("#{base_url}/lists/#{api_name}/segments/#{segment_api_name}/data/load")
     end
   end
-
 
   describe '.search_data_within_segment' do
     it 'calls search_data_within_segment endpoint' do
       client.search_data_within_segment(api_name, segment_api_name)
 
-      expect(client).to have_received(:post).with("#{base_url}/lists/#{api_name}/segments/#{segment_api_name}/data/search")
+      expect(client)
+        .to have_received(:post)
+        .with("#{base_url}/lists/#{api_name}/segments/#{segment_api_name}/data/search")
     end
   end
 end
