@@ -23,7 +23,7 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
 
-RSpec.shared_context "base_client", shared_context: :metadata do
+RSpec.shared_context 'base_client', shared_context: :metadata do
   let(:base_client) do
     instance_double(
       Selligent::Client,
@@ -35,5 +35,5 @@ RSpec.shared_context "base_client", shared_context: :metadata do
 end
 
 RSpec.configure do |config|
-  config.include_context "base_client", include_shared: true
+  config.include_context 'base_client', include_shared: true
 end
