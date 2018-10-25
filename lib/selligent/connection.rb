@@ -18,6 +18,10 @@ module Selligent
       connection.put url, options
     end
 
+    def delete(url, options = {})
+      connection.delete url, options
+    end
+
     private
 
     def connection
