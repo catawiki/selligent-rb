@@ -13,6 +13,7 @@ require 'selligent/client/stored_procedures'
 require 'selligent/client/tasks'
 require 'selligent/client/transactional_bulk'
 require 'selligent/client/transactionals'
+require 'selligent/client/data'
 require 'selligent/middlewares/authorization'
 
 module Selligent
@@ -32,6 +33,7 @@ module Selligent
     include Selligent::Client::Tasks
     include Selligent::Client::TransactionalBulk
     include Selligent::Client::Transactionals
+    include Selligent::Client::Data
 
     attr_reader :config
 
