@@ -29,6 +29,8 @@ RSpec.shared_context 'base_client', shared_context: :metadata do
       Selligent::Client,
       get: nil,
       post: nil,
+      put: nil,
+      delete: nil,
       base_url: base_url
     )
   end
