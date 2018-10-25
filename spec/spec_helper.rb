@@ -1,5 +1,10 @@
 require 'selligent'
 require 'timecop'
+require 'webmock/rspec'
+
+# Allow connections to codeclimate for code coverage
+# WebMock.disable_net_connect!(allow: 'codeclimate.com', allow_localhost: false)
+WebMock.disable_net_connect!
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -11,4 +16,7 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.order = :random
+  srand config.seed
 end
