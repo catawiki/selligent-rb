@@ -4,6 +4,8 @@ module Selligent
   class Client
     # Implements the list endpoints
     #
+    # In this module, `list_name` is the list name as it appears in the API urls.
+    #
     # /organizations/:organization/lists/*
     module Lists
       # Returns an overview of all of the lists in this organization
@@ -17,7 +19,24 @@ module Selligent
         get "#{base_url}/lists", options
       end
 
-      def create_list(list_name, options)
+      # Create a new list
+      #
+      # The model has the following shape:
+      #
+      # {
+      #   "api_name": "list_name_in_api",
+      #   "name": "list_name",
+      #   "type": "Userlist",
+      #   "description": "description",
+      #   "tags": [
+      #     "tag1",
+      #     "tag2"
+      #   ]
+      # }
+      #
+      # @param model [Hash] The model containing the data that should be sent
+      def create_list(model)
+        post "#{base_url}/lists", model
       end
 
       def delete_list(list_name, options)
