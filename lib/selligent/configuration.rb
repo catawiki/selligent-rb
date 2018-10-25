@@ -3,10 +3,9 @@
 module Selligent
   # Configuration options for the Selligent Client.
   class Configuration
-    attr_accessor :username, :host, :api_key, :api_secret, :organization
+    attr_accessor :host, :api_key, :api_secret, :organization
 
     def initialize(options = {})
-      @username = options[:username]
       @host = options[:host]
       @api_key = options[:api_key]
       @api_secret = options[:api_key]
