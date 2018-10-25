@@ -6,7 +6,15 @@ module Selligent
     #
     # /organizations/:organization/lists/*
     module Lists
-      def lists(options)
+      # Returns an overview of all of the lists in this organization
+      #
+      # @param options [Hash] Options for filtering, searching, etc.
+      # @option options [String] :filter Filter list by type
+      # @option options [String] :search Search a list by name, description or tags
+      # @option options [Integer] :skip Specify index to start picking list items from
+      # @option options [Integer] :take Specify count for the number of items to be taken
+      def lists(options = {})
+        get "#{base_url}/lists", options
       end
 
       def create_list(list_name, options)
