@@ -39,7 +39,13 @@ module Selligent
         post "#{base_url}/lists", model
       end
 
-      def delete_list(list_name, options)
+      # Delete a list
+      #
+      # @param list_name [String] The list API name
+      # @param options [Hash] Additional options
+      # @option options [Boolean] :dropTable delete the associated table
+      def delete_list(list_name, options = {})
+        delete "#{base_url}/lists/#{list_name}", options
       end
 
       def list(list_name)
