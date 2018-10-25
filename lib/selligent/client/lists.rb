@@ -55,7 +55,38 @@ module Selligent
         get "#{base_url}/lists/#{list_name}"
       end
 
-      def update_list(list_name)
+      # Update a list
+      #
+      # The model has the following shape:
+      #
+      # {
+      #   "api_name": "list_name_in_api",
+      #   "name": "list_name",
+      #   "description": "description",
+      #   "tags": [
+      #     "tag1",
+      #     "tag2"
+      #   ],
+      #   "email_quality_configuration": {
+      #     "type": "Normal",
+      #     "bounce_scope": "MASTER",
+      #     "actions": [
+      #       {
+      #         "name": "OPTOUT",
+      #         "value": "10"
+      #       }
+      #     ],
+      #     "bouncestoredprocedures": [
+      #       "ST_Bounce_Sp1",
+      #       "ST_Bounce_Sp2"
+      #     ]
+      #   }
+      # }
+      #
+      # @param list_name [String] The list API name
+      # @param model [Hash] The model containing the data that should be sent
+      def update_list(list_name, model)
+        put "#{base_url}/lists/#{list_name}", model
       end
 
       def list_fields(list_name)
