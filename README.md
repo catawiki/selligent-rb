@@ -37,6 +37,64 @@ Selligent.transactionals_status(ids)
 Selligent.transactional_status(id)
 ```
 
+### Lists
+
+```ruby
+# Returns an overview of all of the lists in this organization
+Selligent.lists(options = {})
+
+# Create a new list
+Selligent.create_list(model)
+
+# Delete a list
+Selligent.delete_list(list_name, options = {})
+
+# Get details for the list with the given name
+Selligent.list(list_name)
+
+# Update a list
+Selligent.update_list(list_name, model)
+
+# Get list fields for the given list
+Selligent.fields(list_name)
+
+# Create list fields
+Selligent.create_fields(list_name, model)
+
+# Delete a list field
+Selligent.delete_field(list_name, field_name)
+
+# Update a list field
+Selligent.update_field(list_name, field_name, model)
+
+# Get the number of records for the given list
+Selligent.records_count(list_name)
+
+# Delete a single record by id
+Selligent.delete_record(list_name, record_id)
+
+# Get all relations associated with a list
+Selligent.relations(list_name)
+
+# Create a relation between two lists
+Selligent.create_relation(list_name, model)
+
+# Delete a relation between two lists
+Selligent.delete_relation(list_name, scope)
+
+# Get relation details based based on the list name and the relation scope name
+Selligent.relation(list_name, scope)
+
+# Update an existing relation
+Selligent.update_relation(list_name, scope, model)
+
+# Get an overview of the segments defined on the given list
+Selligent.segments(list_name, options = {})
+
+# Get segment details based on list API name and segment API name
+Selligent.segment(list_name, segment_name)
+```
+
 ## Develop
 
 Please take a look at https://github.com/catawiki/selligent/pull/9 and use it as a
