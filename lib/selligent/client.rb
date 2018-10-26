@@ -5,6 +5,7 @@ require 'selligent/connection'
 require 'selligent/client/cumulio'
 require 'selligent/client/journeys'
 require 'selligent/client/lists'
+require 'selligent/client/organizations'
 require 'selligent/client/status'
 require 'selligent/client/stored_procedures'
 require 'selligent/client/tasks'
@@ -21,6 +22,7 @@ module Selligent
     include Selligent::Client::Cumulio
     include Selligent::Client::Journeys
     include Selligent::Client::Lists
+    include Selligent::Client::Organizations
     include Selligent::Client::Status
     include Selligent::Client::StoredProcedures
     include Selligent::Client::Tasks
@@ -38,8 +40,12 @@ module Selligent
       yield config
     end
 
+    def root_url
+      '/Portal/Api'
+    end
+
     def base_url
-      "/Portal/Api/organizations/#{config.organization}"
+      "#{root_url}/organizations/#{config.organization}"
     end
   end
 end

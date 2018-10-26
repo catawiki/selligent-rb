@@ -13,6 +13,16 @@ end
 
 ## Endpoints
 
+### Organization
+
+```ruby
+# Get an overview of all organizations
+Selligent.organizations
+
+# Get details on the current organization
+Selligent.organization
+```
+
 ### Journey
 
 ```ruby
