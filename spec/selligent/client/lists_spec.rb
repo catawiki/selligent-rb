@@ -3,9 +3,6 @@ require 'spec_helper'
 RSpec.describe Selligent::Client::Lists do
   include_context 'base_client'
 
-  subject(:client) { base_client.extend(described_class) }
-
-  let(:base_url) { '/Portal/Api/organizations/my-org' }
   let(:list_name) { 'the_list' }
 
   describe 'lists' do

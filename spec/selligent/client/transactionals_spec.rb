@@ -3,9 +3,6 @@ require 'spec_helper'
 RSpec.describe Selligent::Client::Transactionals do
   include_context 'base_client'
 
-  subject(:client) { base_client.extend(described_class) }
-
-  let(:base_url) { '/Portal/Api/organizations/my-org' }
   let(:api_name) { 'campaign' }
 
   describe '.transactionals' do

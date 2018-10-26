@@ -24,6 +24,11 @@ RSpec.configure do |config|
 end
 
 RSpec.shared_context 'base_client', shared_context: :metadata do
+  subject(:client) { base_client.extend(described_class) }
+
+  let(:root_url) { '/Portal/Api' }
+  let(:base_url) { "#{root_url}/organizations/my-org" }
+
   let(:base_client) do
     instance_double(
       Selligent::Client,
@@ -31,7 +36,8 @@ RSpec.shared_context 'base_client', shared_context: :metadata do
       post: nil,
       put: nil,
       delete: nil,
-      base_url: base_url
+      base_url: base_url,
+      root_url: root_url
     )
   end
 end
