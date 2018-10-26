@@ -44,6 +44,14 @@ Selligent.transactionals_status(ids)
 Selligent.transactional_status(id)
 ```
 
+
+### Transactional Bulk
+
+```ruby
+# Trigger a bulk journey in a transactional way
+Selligent.send_transactional_bulk(name)
+```
+
 ### Lists
 
 ```ruby
