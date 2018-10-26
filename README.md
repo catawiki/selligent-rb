@@ -102,6 +102,16 @@ Selligent.segments(list_name, options = {})
 Selligent.segment(list_name, segment_name)
 ```
 
+### Stored Procedure
+
+```ruby
+# Get list of stored procedures
+Selligent.stored_procedures(options = {})
+
+# Get details of stored procedure by name
+Selligent.stored_procedure(name)
+```
+
 ## Develop
 
 Please take a look at https://github.com/catawiki/selligent/pull/9 and use it as a
