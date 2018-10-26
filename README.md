@@ -134,6 +134,16 @@ Selligent.enable_task(task_name)
 Selligent.run_task(task_name)
 ```
 
+### Cumulio
+
+```ruby
+# Get datasets
+Selligent.cumulio_datasets
+
+# Run a cumulio query
+Selligent.cumulio_query(model)
+```
+
 ## Develop
 
 Please take a look at https://github.com/catawiki/selligent/pull/9 and use it as a
