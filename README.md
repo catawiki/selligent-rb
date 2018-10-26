@@ -23,6 +23,22 @@ Selligent.organizations
 Selligent.organization
 ```
 
+### Content
+
+```ruby
+# Create simple (HTML only) single language email message content
+Selligent.create_email(model, params = {})
+
+# Create mobile push message content
+Selligent.create_push_message(model, params = {})
+
+# Create simple page content
+Selligent.create_page(model, params = {})
+
+# Create SMS content
+Selligent.create_sms(model, params = {})
+```
+
 ### Journey
 
 ```ruby
