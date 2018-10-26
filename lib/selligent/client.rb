@@ -8,6 +8,7 @@ require 'selligent/client/lists'
 require 'selligent/client/status'
 require 'selligent/client/stored_procedures'
 require 'selligent/client/tasks'
+require 'selligent/client/transactional_bulk'
 require 'selligent/client/transactionals'
 require 'selligent/middlewares/authorization'
 
@@ -23,6 +24,7 @@ module Selligent
     include Selligent::Client::Status
     include Selligent::Client::StoredProcedures
     include Selligent::Client::Tasks
+    include Selligent::Client::TransactionalBulk
     include Selligent::Client::Transactionals
 
     attr_reader :config
