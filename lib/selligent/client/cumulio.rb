@@ -8,7 +8,7 @@ module Selligent
     module Cumulio
       # Get datasets
       def cumulio_datasets
-        get "/reporting/cumulio/#{config.organization}/datasets"
+        get "#{root_url}/reporting/cumulio/#{config.organization}/datasets"
       end
 
       # Run a cumulio query
@@ -57,7 +57,7 @@ module Selligent
       #
       # @param model [Hash] The model
       def cumulio_query(model)
-        post "/reporting/cumulio/#{config.organization}/query", model
+        post "#{root_url}/reporting/cumulio/#{config.organization}/query", model
       end
     end
   end

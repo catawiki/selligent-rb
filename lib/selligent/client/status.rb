@@ -8,7 +8,7 @@ module Selligent
     module Status
       # Get the Selligent status
       def status
-        get '/Status'
+        get "#{root_url}/Status"
       end
     end
   end
