@@ -6,20 +6,20 @@ require 'faraday_middleware'
 module Selligent
   # Network layer
   module Connection
-    def get(url, options = {})
-      connection.get url, options
+    def get(url, options = {}, &block)
+      connection.get url, options, &block
     end
 
-    def post(url, options = {})
-      connection.post url, options
+    def post(url, options = {}, &block)
+      connection.post url, options, &block
     end
 
-    def put(url, options = {})
-      connection.put url, options
+    def put(url, options = {}, &block)
+      connection.put url, options, &block
     end
 
-    def delete(url, options = {})
-      connection.delete url, options
+    def delete(url, options = {}, &block)
+      connection.delete url, options, &block
     end
 
     private
