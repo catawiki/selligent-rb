@@ -5,6 +5,7 @@ require 'selligent/connection'
 require 'selligent/client/journeys'
 require 'selligent/client/lists'
 require 'selligent/client/stored_procedures'
+require 'selligent/client/tasks'
 require 'selligent/client/transactionals'
 require 'selligent/middlewares/authorization'
 
@@ -17,6 +18,7 @@ module Selligent
     include Selligent::Client::Journeys
     include Selligent::Client::Lists
     include Selligent::Client::StoredProcedures
+    include Selligent::Client::Tasks
     include Selligent::Client::Transactionals
 
     attr_reader :config
