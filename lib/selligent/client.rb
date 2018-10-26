@@ -6,6 +6,7 @@ require 'selligent/client/cumulio'
 require 'selligent/client/journeys'
 require 'selligent/client/lists'
 require 'selligent/client/organizations'
+require 'selligent/client/single_batch'
 require 'selligent/client/status'
 require 'selligent/client/stored_procedures'
 require 'selligent/client/tasks'
@@ -23,6 +24,7 @@ module Selligent
     include Selligent::Client::Journeys
     include Selligent::Client::Lists
     include Selligent::Client::Organizations
+    include Selligent::Client::SingleBatch
     include Selligent::Client::Status
     include Selligent::Client::StoredProcedures
     include Selligent::Client::Tasks

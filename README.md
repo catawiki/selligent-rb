@@ -30,6 +30,37 @@ Selligent.organization
 Selligent.journeys
 ```
 
+### Single Batch
+
+```ruby
+# Get all journeys of type Single Batch
+Selligent.single_batches
+
+# Create a Single Batch journey
+Selligent.create_single_batch(model)
+
+# Get information on a Single Batch journey
+Selligent.single_batch(name)
+
+# Cancel launching of a single batch
+Selligent.cancel_single_batch(name)
+
+# Launch a single batch
+Selligent.launch_single_batch(name, request)
+
+# Trigger execution of a single batch journey
+Selligent.trigger_single_batch(name, model)
+
+# Send single batch with email message
+Selligent.send_single_batch_email(model)
+
+# Send single batch mobile push message
+Selligent.send_single_batch_push(model)
+
+# Send single batch sms
+Selligent.send_single_batch_sms(model)
+```
+
 ### Transactional
 
 ```ruby
