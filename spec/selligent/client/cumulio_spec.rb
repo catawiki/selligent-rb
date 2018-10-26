@@ -20,7 +20,10 @@ RSpec.describe Selligent::Client::Cumulio do
     it 'calls the correct endpoint' do
       client.cumulio_query(model)
 
-      expect(client).to have_received(:post).with("#{root_url}/reporting/cumulio/my-org/query", model)
+      expect(client).to have_received(:post).with(
+        "#{root_url}/reporting/cumulio/my-org/query",
+        model
+      )
     end
   end
 end
