@@ -112,6 +112,28 @@ Selligent.stored_procedures(options = {})
 Selligent.stored_procedure(name)
 ```
 
+### Task
+
+```ruby
+# Get collection of tasks
+Selligent.tasks(options = {})
+
+# Get task details
+Selligent.task(task_name)
+
+# Get actions of task
+Selligent.task_actions(task_name)
+
+# Disable a task
+Selligent.disable_task(task_name)
+
+# Enable a task
+Selligent.enable_task(task_name)
+
+# Run a task
+Selligent.run_task(task_name)
+```
+
 ## Develop
 
 Please take a look at https://github.com/catawiki/selligent/pull/9 and use it as a
