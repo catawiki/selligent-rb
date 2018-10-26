@@ -144,6 +144,13 @@ Selligent.cumulio_datasets
 Selligent.cumulio_query(model)
 ```
 
+### Status
+
+```ruby
+# Get the Selligent status
+Selligent.status
+```
+
 ## Develop
 
 Please take a look at https://github.com/catawiki/selligent/pull/9 and use it as a
