@@ -2,6 +2,7 @@
 
 require 'selligent/configuration'
 require 'selligent/connection'
+require 'selligent/client/content'
 require 'selligent/client/cumulio'
 require 'selligent/client/journeys'
 require 'selligent/client/lists'
@@ -20,6 +21,7 @@ module Selligent
     extend Forwardable
 
     include Selligent::Connection
+    include Selligent::Client::Content
     include Selligent::Client::Cumulio
     include Selligent::Client::Journeys
     include Selligent::Client::Lists
