@@ -13,6 +13,13 @@ end
 
 ## Endpoints
 
+### Journey
+
+```ruby
+# Get an overview of all journeys
+Selligent.journeys
+```
+
 ### Transactional
 
 ```ruby
