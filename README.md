@@ -11,6 +11,16 @@ Selligent.configure do |c|
 end
 ```
 
+## API Documentation
+
+To generate API documentation, use yard:
+
+```ruby
+yard
+```
+
+Documentation can be found in /path/to/selligent/doc/index.html
+
 ## Endpoints
 
 ### Organization

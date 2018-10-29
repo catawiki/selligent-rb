@@ -5,3 +5,6 @@ Gemfile.lock
 log/*.log
 pkg/
 .rspec_status
+
+/doc
+/.yardoc

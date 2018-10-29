@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 group :development do
   gem 'rubocop', '~> 0.5'
+  gem 'yard'
 end
 
 group :test do
