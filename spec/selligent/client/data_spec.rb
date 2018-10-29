@@ -45,9 +45,11 @@ RSpec.describe Selligent::Client::Data do
 
   describe '.delete_data_from_segment' do
     let(:options) { { mode: 'Stream' } }
+    let(:data) { [[1, 2], [3, 4]] }
+    let(:segment_api_name) { 'some_name' }
 
     it 'calls delete_data_from_segment endpoint' do
-      client.delete_data_from_segment(api_name, segment_api_name, options)
+      client.delete_data_from_segment(api_name, segment_api_name, data, options)
 
       expect(client)
         .to have_received(:delete)
