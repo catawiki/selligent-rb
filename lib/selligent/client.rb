@@ -4,6 +4,7 @@ require 'selligent/configuration'
 require 'selligent/connection'
 require 'selligent/client/content'
 require 'selligent/client/cumulio'
+require 'selligent/client/data'
 require 'selligent/client/journeys'
 require 'selligent/client/lists'
 require 'selligent/client/organizations'
@@ -13,7 +14,6 @@ require 'selligent/client/stored_procedures'
 require 'selligent/client/tasks'
 require 'selligent/client/transactional_bulk'
 require 'selligent/client/transactionals'
-require 'selligent/client/data'
 require 'selligent/middlewares/authorization'
 
 module Selligent
@@ -24,6 +24,7 @@ module Selligent
     include Selligent::Connection
     include Selligent::Client::Content
     include Selligent::Client::Cumulio
+    include Selligent::Client::Data
     include Selligent::Client::Journeys
     include Selligent::Client::Lists
     include Selligent::Client::Organizations
@@ -33,7 +34,6 @@ module Selligent
     include Selligent::Client::Tasks
     include Selligent::Client::TransactionalBulk
     include Selligent::Client::Transactionals
-    include Selligent::Client::Data
 
     attr_reader :config
 

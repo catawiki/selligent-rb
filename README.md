@@ -177,6 +177,28 @@ Selligent.segments(list_name, options = {})
 Selligent.segment(list_name, segment_name)
 ```
 
+### Data
+
+```ruby
+# Delete data from the list with the given api-name
+Selligent.delete_data(api_name, data, params = {})
+
+# Load data into the list with the given api-name
+Selligent.load_data(api_name, data, params = {})
+
+# Search for data records in a specific table
+Selligent.search_data(api_name, request, params = {})
+
+# Delete data from the segment with the given segment-api-name
+Selligent.delete_data_from_segment(api_name, segment_api_name, data, params = {})
+
+# Load data into the segment using given segment-api-name
+Selligent.load_data_into_segment(api_name, segment_api_name, data, params = {})
+
+# Search for data records within a segment of specific table
+Selligent.search_data_within_segment(api_name, segment_api_name, request, params = {})
+```
+
 ### Stored Procedure
 
 ```ruby
@@ -226,26 +248,6 @@ Selligent.cumulio_query(model)
 Selligent.status
 ```
 
-### Data
-```ruby
-# Delete data from the list with the given api-name
-Selligent.delete_data(api_name)
-
-# Load data into the list with the given api-name
-Selligent.load_data(api_name)
-
-# Search for data records in a specific table
-Selligent.search_data(api_name)
-
-# Delete data from the segment with the given segment-api-name
-Selligent.delete_data_from_segment(api_name, segment_api_name)
-
-# Load data into the segment using given segment-api-name
-Selligent.load_data_into_segment(api_name, segment_api_name)
-
-# Search for data records within a segment of specific table
-Selligent.search_data_within_segment(api_name, segment_api_name)
-```
 
 ## Develop
 

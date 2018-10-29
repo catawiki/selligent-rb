@@ -133,8 +133,10 @@ module Selligent
       # @param request [Hash] details on the data that should be searched
       # @option params [String] :mode Data transfer mode (Sync or Stream)
       def search_data_within_segment(api_name, segment_api_name, request, params = {})
-        post("#{base_url}/lists/#{api_name}/segments/#{segment_api_name}"\
-             '/data/search', request) do |req|
+        post(
+          "#{base_url}/lists/#{api_name}/segments/#{segment_api_name}/data/search",
+          request
+        ) do |req|
           req.params.merge!(params)
         end
       end
