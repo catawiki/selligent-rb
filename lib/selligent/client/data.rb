@@ -9,9 +9,9 @@ module Selligent
       # Deletes data from the list with the given api-name in the given organization
       #
       # @param api_name [String] The api name
-      # @param keyFields [String] Comma-separated list of the key fields to delete records
-      # @param params [Hash] Additional options
       # @param data [Array<Array>] The data
+      # @param params [Hash] Additional options
+      # @option params [String] :keyFields Comma-separated list of the key fields to delete records
       # @option params [String] :fields Comma-separated list of the fields in data records
       # @option params [String] :mode Data transfer mode (Sync or Stream)
       # @option params [String] :errorHandling Error handling options
@@ -25,8 +25,8 @@ module Selligent
       #
       # @param api_name [String] The api name
       # @param data [Array<Array>] The data
-      # @param keyFields [String] Comma-separated list of the key fields to create/update records.
       # @param params [Hash] Additional options
+      # @option params [String] :keyFields Comma-separated list of the key fields to delete records
       # @option params [String] :fields Comma-separated list of the fields in data records
       # @option params [String] :mode Data transfer mode (Sync or Stream)
       # @option params [String] :deduplication De-duplication option during an import data
@@ -77,9 +77,9 @@ module Selligent
       #
       # @param api_name [String] The api name
       # @param segment_api_name [String] API name of the segment
-      # @param params [Hash] Additional options
-      # @param keyFields [String] Comma-separated list of the key fields to delete records
       # @param data [Array<Array>] The data
+      # @param params [Hash] Additional options
+      # @option params [String] :keyFields Comma-separated list of the key fields to delete records
       # @option params [String] :fields Comma-separated list of the fields in data records
       # @option params [String] :mode Data transfer mode (Sync or Stream)
       # @option params [String] :errorHandling Error handling options
@@ -94,8 +94,8 @@ module Selligent
       #
       # @param api_name [String] The api name
       # @param segment_api_name [String] API name of the segment
-      # @param params [Hash] Additional options
       # @param data [Array<Array>] The data
+      # @param params [Hash] Additional options
       # @option params [String] :fields Comma-separated list of the fields in data records
       # @option params [String] :mode Data transfer mode (Sync or Stream)
       # @option params [String] :deduplication De-duplication option during an import data
@@ -129,8 +129,8 @@ module Selligent
       # }
       # @param api_name [String] The api name
       # @param segment_api_name [String] API name of the segment
-      # @param params [Hash] Additional options
       # @param request [Hash] details on the data that should be searched
+      # @param params [Hash] Additional options
       # @option params [String] :mode Data transfer mode (Sync or Stream)
       def search_data_within_segment(api_name, segment_api_name, request, params = {})
         post(
