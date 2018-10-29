@@ -91,7 +91,7 @@ module Selligent
       # @param model [Hash] The model containing the data that should be sent
       # @option model [Array] :items The request bodies
       def update_profile_and_send_transactional(api_name, model)
-        post "#{base_url}/journeys/transactional/#{api_name}/updateProfileAndSend", model
+        post "#{base_url}/journeys/transactional/shortcut/#{api_name}/updateProfileAndSend", model
       end
 
       # Returns a list of transactional-status-objects for the messages that correspond to
