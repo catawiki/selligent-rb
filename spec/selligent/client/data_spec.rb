@@ -11,9 +11,10 @@ RSpec.describe Selligent::Client::Data do
 
   describe '.delete_data' do
     let(:options) { { mode: 'Stream' } }
+    let(:data) { [[1, 2], [3, 4]] }
 
     it 'calls delete_data endpoint' do
-      client.delete_data(api_name, options)
+      client.delete_data(api_name, data, options)
 
       expect(client).to have_received(:delete).with("#{base_url}/lists/#{api_name}/data", options)
     end

@@ -10,11 +10,14 @@ module Selligent
       #
       # @param api_name [String] The api name
       # @param params [Hash] Additional options
+      # @param data [Array<Array>] The data
       # @option params [String] :fields Comma-separated list of the fields in data records
       # @option params [String] :mode Data transfer mode (Sync or Stream)
       # @option params [String] :errorHandling Error handling options
-      def delete_data(api_name, params = {})
-        delete "#{base_url}/lists/#{api_name}/data", params
+      def delete_data(api_name, data, params = {})
+        delete("#{base_url}/lists/#{api_name}/data", params) do |req|
+          req.body = data.to_json
+        end
       end
 
       # Loads data into the list with the given api-name in the given organization
