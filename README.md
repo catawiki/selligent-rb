@@ -122,7 +122,7 @@ Selligent.send_transactional_bulk(name)
 ### Lists
 
 ```ruby
-# Returns an overview of all of the lists in this organization
+# Get an overview of all of the lists
 Selligent.lists(options = {})
 
 # Create a new list
@@ -164,7 +164,7 @@ Selligent.create_relation(list_name, model)
 # Delete a relation between two lists
 Selligent.delete_relation(list_name, scope)
 
-# Get relation details based based on the list name and the relation scope name
+# Get relation details based on the list name and the relation scope name
 Selligent.relation(list_name, scope)
 
 # Update an existing relation
@@ -226,8 +226,28 @@ Selligent.cumulio_query(model)
 Selligent.status
 ```
 
+### Data
+```ruby
+# Delete data from the list with the given api-name
+Selligent.delete_data(api_name)
+
+# Load data into the list with the given api-name
+Selligent.load_data(api_name)
+
+# Search for data records in a specific table
+Selligent.search_data(api_name)
+
+# Delete data from the segment with the given segment-api-name
+Selligent.delete_data_from_segment(api_name, segment_api_name)
+
+# Load data into the segment using given segment-api-name
+Selligent.load_data_into_segment(api_name, segment_api_name)
+
+# Search for data records within a segment of specific table
+Selligent.search_data_within_segment(api_name, segment_api_name)
+```
+
 ## Develop
 
 Please take a look at https://github.com/catawiki/selligent/pull/9 and use it as a
 blueprint for adding other endpoints. Don't forget to update the readme as well.
-
