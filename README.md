@@ -1,5 +1,25 @@
 # Selligent Ruby API client
 
+## Install
+
+Install via Rubygems
+
+```bash
+gem install selligent
+```
+
+... or add to your Gemfile
+
+```ruby
+gem 'selligent', '~> 0.1'
+```
+
+Access the library in Ruby:
+
+```ruby
+require 'selligent'
+```
+
 ## Configure
 
 ```ruby
