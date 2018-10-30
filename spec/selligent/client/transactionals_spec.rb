@@ -66,7 +66,7 @@ RSpec.describe Selligent::Client::Transactionals do
       client.update_profile_and_send_transactional(api_name, model)
 
       expect(client).to have_received(:post).with(
-        "#{base_url}/journeys/transactional/#{api_name}/updateProfileAndSend",
+        "#{base_url}/journeys/transactional/shortcut/#{api_name}/updateProfileAndSend",
         model
       )
     end
