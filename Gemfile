@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :development do
-  gem 'rubocop', '~> 0.5'
+  gem 'rubocop', '>= 0.49'
   gem 'yard'
 end
 
