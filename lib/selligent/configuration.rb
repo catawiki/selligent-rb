@@ -3,13 +3,14 @@
 module Selligent
   # Configuration options for the Selligent Client.
   class Configuration
-    attr_accessor :host, :api_key, :api_secret, :organization
+    attr_accessor :host, :api_key, :api_secret, :organization, :logger
 
     def initialize(options = {})
       @host = options[:host]
       @api_key = options[:api_key]
       @api_secret = options[:api_key]
       @organization = options[:organization]
+      @logger = options[:logger]
     end
 
     def inspect

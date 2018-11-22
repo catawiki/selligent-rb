@@ -37,6 +37,9 @@ module Selligent
       def load_data(api_name, data, params = {})
         post("#{base_url}/lists/#{api_name}/data/load", data) do |req|
           req.params.merge!(params)
+          logger.notify 'Selligent data load',
+                        "loading #{api_name}",
+                        request: req.inspect
         end
       end
 

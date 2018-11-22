@@ -53,5 +53,9 @@ module Selligent
     def base_url
       "#{root_url}/organizations/#{config.organization}"
     end
+
+    def logger
+      config.logger
+    end
   end
 end
