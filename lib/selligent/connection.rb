@@ -2,6 +2,7 @@
 
 require 'faraday'
 require 'faraday_middleware'
+require 'net/http/persistent'
 
 module Selligent
   # Network layer
@@ -31,7 +32,10 @@ module Selligent
 
         conn.response :json, parser_options: { symbolize_names: true }
 
-        conn.adapter Faraday.default_adapter
+        conn.adapter :net_http_persistent, pool_size: 5 do |http| # yields Net::HTTP::Persistent
+          http.idle_timeout = 3000
+          http.retry_change_requests = true
+        end
       end
     end
   end
