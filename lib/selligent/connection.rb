@@ -30,6 +30,7 @@ module Selligent
         conn.request :selligent_auth
 
         conn.response :json, parser_options: { symbolize_names: true }
+        conn.response :raise_error
 
         conn.adapter Faraday.default_adapter
       end
