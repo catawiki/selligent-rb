@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/catawiki/selligent-rb'
   s.summary     = 'Selligent Ruby API client'
   s.description = 'Provides access to the Selligent REST API'
-  s.license     = 'proprietary'
+  s.license     = 'MIT'
 
   s.files       = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
