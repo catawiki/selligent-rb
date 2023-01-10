@@ -6,8 +6,8 @@ require 'selligent/version'
 Gem::Specification.new do |s|
   s.name        = 'selligent'
   s.version     = Selligent::VERSION
-  s.authors     = ['Werner Hofstra']
-  s.email       = ['w.hofstra@catawiki.nl']
+  s.authors     = ['Catawiki', 'Werner Hofstra']
+  s.email       = ['opensource@catawiki.nl']
   s.homepage    = 'https://github.com/catawiki/selligent-rb'
   s.summary     = 'Selligent Ruby API client'
   s.description = 'Provides access to the Selligent REST API'
