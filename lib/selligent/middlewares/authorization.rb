@@ -8,7 +8,7 @@ module Selligent
   module Middlewares
     # Auth is a Faraday middleware
     class Authorization < ::Faraday::Middleware
-      AUTH_HEADER = 'X-ApiKey'.freeze
+      AUTH_HEADER = 'X-ApiKey'
 
       def call(env)
         env[:request_headers][AUTH_HEADER] = auth_header
