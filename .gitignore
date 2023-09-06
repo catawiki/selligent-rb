@@ -1,7 +1,5 @@
 .bundle/
 
-Gemfile.lock
-
 log/*.log
 pkg/
 .rspec_status
