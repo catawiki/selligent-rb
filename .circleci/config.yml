@@ -8,7 +8,10 @@ jobs:
       - checkout
       - restore_cache:
           key: gemfile-3-0-{{ checksum "Gemfile" }}-{{ checksum "selligent.gemspec" }}
-      - run: bundle install -j3 --path vendor/bundle
+      - run: gem install bundler:2.3.26
+      - run: bundle config set --local path ./vendor/bundle
+      - run: bundle config set --local frozen 'true'
+      - run: bundle install -j3
       - save_cache:
           key: gemfile-3-0-{{ checksum "Gemfile" }}-{{ checksum "selligent.gemspec" }}
           paths:
