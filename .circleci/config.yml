@@ -29,10 +29,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: gemfile-<< parameters.ruby_version >>-{{ checksum "Gemfile.lock" }}
+          key: gemfile-<< parameters.ruby_version >>-{{ checksum "Gemfile" }}
       - run: bundle install -j3
       - save_cache:
-          key: gemfile-<< parameters.ruby_version >>-{{ checksum "Gemfile.lock" }}
+          key: gemfile-<< parameters.ruby_version >>-{{ checksum "Gemfile" }}
           paths:
             - vendor/bundle
 
@@ -42,7 +42,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: gemfile-2.7-{{ checksum "Gemfile" }}-{{ checksum "selligent.gemspec" }}
+          key: gemfile-2.7-{{ checksum "Gemfile" }}
       - run: bundle check --path vendor/bundle
       - run_tests
       - store_test_results:
@@ -54,7 +54,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: gemfile-3.0-{{ checksum "Gemfile" }}-{{ checksum "selligent.gemspec" }}
+          key: gemfile-3.0-{{ checksum "Gemfile" }}
       - run: gem install bundler:2.3.26
       - run: bundle check --path vendor/bundle
       - run_tests
