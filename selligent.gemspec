@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Selligent Ruby API client'
   s.description = 'Provides access to the Selligent REST API'
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 3.0.5'
+  s.required_ruby_version = '>= 2.7'
 
   s.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
