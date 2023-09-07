@@ -35,7 +35,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: gemfile-2.7-{{ checksum "Gemfile" }}
+          key: gemfile-<< parameters.ruby_version >>-{{ checksum "Gemfile" }}
       - run: gem install bundler:2.3.26
       - run: bundle check --path vendor/bundle
       - run: bundle exec rubocop
