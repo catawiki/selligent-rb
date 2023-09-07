@@ -5,17 +5,6 @@ docker-auth: &docker-auth
     username: $DOCKERHUB_USERNAME
     password: $DOCKERHUB_ACCESS_TOKEN
 
-commands:
-  run_tests:
-    steps:
-      - run: bundle exec rubocop
-      - run: |
-          bundle exec rspec --profile 10 \
-                            --format RspecJunitFormatter \
-                            --out tmp/results/rspec.xml \
-                            --format progress \
-                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
-
 jobs:
   bundle:
     parameters:
@@ -24,7 +13,6 @@ jobs:
       - image: cimg/ruby:<< parameters.ruby_version >>
         <<: *docker-auth
         environment:
-          RAILS_ENV: test
           BUNDLE_DEPLOYMENT: true
     steps:
       - checkout
@@ -36,31 +24,29 @@ jobs:
           paths:
             - vendor/bundle
 
-  ruby2:
+  ruby:
+    parameters:
+      ruby_version: { type: string }
     docker:
-      - image: cimg/ruby:2.7
+      - image: cimg/ruby:<< parameters.ruby_version >>
+        <<: *docker-auth
+        environment:
+          BUNDLE_DEPLOYMENT: true
     steps:
       - checkout
       - restore_cache:
           key: gemfile-2.7-{{ checksum "Gemfile" }}
-      - run: bundle check --path vendor/bundle
-      - run_tests
-      - store_test_results:
-          path: tmp/results
-
-  ruby3:
-    docker:
-      - image: cimg/ruby:3.0
-    steps:
-      - checkout
-      - restore_cache:
-          key: gemfile-3.0-{{ checksum "Gemfile" }}
       - run: gem install bundler:2.3.26
       - run: bundle check --path vendor/bundle
-      - run_tests
+      - run: bundle exec rubocop
+      - run: |
+          bundle exec rspec --profile 10 \
+                            --format RspecJunitFormatter \
+                            --out tmp/results/rspec.xml \
+                            --format progress \
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
       - store_test_results:
           path: tmp/results
-
 
 workflows:
   version: 2
@@ -71,9 +57,10 @@ workflows:
           matrix:
             parameters:
               ruby_version: ['2.7', '3.0']
-      - ruby2:
-          requires:
-            - bundle
-      - ruby3:
+      - ruby:
+          context: org-global
+          matrix:
+            parameters:
+              ruby_version: ['2.7', '3.0']
           requires:
             - bundle
