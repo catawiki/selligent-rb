@@ -25,6 +25,7 @@ module Selligent
     include Selligent::Connection
     include Selligent::Client::Content
     include Selligent::Client::Cumulio
+    include Selligent::Client::CustomJourney
     include Selligent::Client::Data
     include Selligent::Client::Journeys
     include Selligent::Client::Lists
