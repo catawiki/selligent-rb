@@ -19,8 +19,8 @@ module Selligent
       #   }
       # }
       #
-      # @param name [String] The single batch name
-      # @param model [Hash] The model
+      # @param user_id [Integer] Internal Selligent user ID. Sent as 0 by default.
+      # @param parameter_values [Hash] The input data in the format provided by the CRM team.
       def trigger_custom_journey(api_name, entrypoint_name, input)
         post "#{base_url}/journeys/custom/#{api_name}/entrypoints/#{entrypoint_name}/trigger", input
       end
