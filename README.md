@@ -261,6 +261,13 @@ Selligent.cumulio_datasets
 Selligent.cumulio_query(model)
 ```
 
+### Custom journey
+
+```ruby
+# Trigger custom journey. Reffer to the docs from CRM team for input.
+Selligent.trigger_custom_journey(api_name, entrypoint_name, input)
+```
+
 ### Status
 
 ```ruby
