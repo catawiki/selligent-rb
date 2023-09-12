@@ -12,8 +12,6 @@ jobs:
     docker:
       - image: cimg/ruby:<< parameters.ruby_version >>
         <<: *docker-auth
-        environment:
-          BUNDLE_DEPLOYMENT: true
     steps:
       - checkout
       - restore_cache:
@@ -30,8 +28,6 @@ jobs:
     docker:
       - image: cimg/ruby:<< parameters.ruby_version >>
         <<: *docker-auth
-        environment:
-          BUNDLE_DEPLOYMENT: true
     steps:
       - checkout
       - restore_cache:
