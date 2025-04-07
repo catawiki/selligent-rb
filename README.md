@@ -131,7 +131,6 @@ Selligent.transactionals_status(ids)
 Selligent.transactional_status(id)
 ```
 
-
 ### Transactional Bulk
 
 ```ruby
@@ -266,6 +265,28 @@ Selligent.cumulio_query(model)
 ```ruby
 # Trigger custom journey. Reffer to the docs from CRM team for input.
 Selligent.trigger_custom_journey(api_name, entrypoint_name, input)
+```
+
+### CIM
+
+```ruby
+# Create a CIM collect request
+Selligent.cim_collect(api_name, data)
+
+# Create a CIM optout request
+Selligent.cim_optout(api_name, data)
+
+# Create a CIM remove request
+Selligent.cim_remove(api_name, data)
+
+# Cancel a CIM request
+Selligent.cim_cancel(request_id)
+
+# Get the state of a CIM request
+Selligent.cim_state(request_id)
+
+# Get the result of a CIM collect request
+Selligent.cim_result(request_id)
 ```
 
 ### Status

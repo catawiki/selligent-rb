@@ -5,6 +5,7 @@ require 'selligent/connection'
 require 'selligent/client/content'
 require 'selligent/client/cumulio'
 require 'selligent/client/custom_journey'
+require 'selligent/client/cim'
 require 'selligent/client/data'
 require 'selligent/client/journeys'
 require 'selligent/client/lists'
@@ -26,6 +27,7 @@ module Selligent
     include Selligent::Client::Content
     include Selligent::Client::Cumulio
     include Selligent::Client::CustomJourney
+    include Selligent::Client::CIM
     include Selligent::Client::Data
     include Selligent::Client::Journeys
     include Selligent::Client::Lists
