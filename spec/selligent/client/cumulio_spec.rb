@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
+require 'ostruct'
 
 RSpec.describe Selligent::Client::Cumulio do
   include_context 'base_client'
