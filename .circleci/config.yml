@@ -54,11 +54,11 @@ workflows:
           context: org-global
           matrix:
             parameters:
-              ruby_version: ['3.4.2']
+              ruby_version: ['3.2', '3.3', '3.4']
       - ruby:
           context: org-global
           matrix:
             parameters:
-              ruby_version: ['3.4.2']
+              ruby_version: ['3.2', '3.3', '3.4']
           requires:
             - bundle
