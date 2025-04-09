@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Selligent Ruby API client'
   s.description = 'Provides access to the Selligent REST API'
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 2.7'
+  s.required_ruby_version = '>= 3.2'
 
   s.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
 
   s.require_paths = ['lib']
 
-  s.add_development_dependency 'bundler', '~> 2.3'
+  s.add_development_dependency 'bundler'
   s.add_dependency 'faraday'
   s.add_dependency 'faraday_middleware'
 end
