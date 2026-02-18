@@ -27,10 +27,10 @@ RSpec.describe Selligent::Client::Transactionals do
     let(:model) do
       {
         items: [
-          email: 'info@example.com',
-          language: 'EN',
-          data: {},
-          dtsdata: []
+          { email: 'info@example.com',
+            language: 'EN',
+            data: {},
+            dtsdata: [] }
         ]
       }
     end
@@ -49,17 +49,17 @@ RSpec.describe Selligent::Client::Transactionals do
     let(:model) do
       {
         items: [
-          email: 'info@example.com',
-          language: 'EN',
-          profile: [
-            scope: 'MASTER',
-            fields: {
-              'Name' => 'John',
-              'LastName' => 'Smith'
-            }
-          ],
-          data: {},
-          dtsdata: []
+          { email: 'info@example.com',
+            language: 'EN',
+            profile: [
+              { scope: 'MASTER',
+                fields: {
+                  'Name' => 'John',
+                  'LastName' => 'Smith'
+                } }
+            ],
+            data: {},
+            dtsdata: [] }
         ]
       }
     end

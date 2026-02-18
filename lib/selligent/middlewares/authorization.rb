@@ -16,7 +16,7 @@ module Selligent
       end
 
       def self.setup!
-        Faraday::Request.register_middleware selligent_auth: -> { self }
+        Faraday::Middleware.register_middleware selligent_auth: self
       end
 
       def auth_header
