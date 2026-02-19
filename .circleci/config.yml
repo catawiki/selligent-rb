@@ -16,7 +16,7 @@ jobs:
       - checkout
       - restore_cache:
           key: gemfile-<< parameters.ruby_version >>-{{ checksum "Gemfile" }}
-      - run: gem install bundler:2.6.7
+      - run: gem install bundler:4.0.7 --no-document
       - run: bundle install -j3
       - save_cache:
           key: gemfile-<< parameters.ruby_version >>-{{ checksum "Gemfile" }}
@@ -33,7 +33,7 @@ jobs:
       - checkout
       - restore_cache:
           key: gemfile-<< parameters.ruby_version >>-{{ checksum "Gemfile" }}
-      - run: gem install bundler:2.6.7
+      - run: gem install bundler:4.0.7 --no-document
       - run: bundle install -j3
       - run: bundle check
       - run: bundle exec rubocop
@@ -54,11 +54,11 @@ workflows:
           context: org-global
           matrix:
             parameters:
-              ruby_version: ['3.2', '3.3', '3.4']
+              ruby_version: ['3.2', '3.3', '3.4', '4.0']
       - ruby:
           context: org-global
           matrix:
             parameters:
-              ruby_version: ['3.2', '3.3', '3.4']
+              ruby_version: ['3.2', '3.3', '3.4', '4.0']
           requires:
             - bundle
