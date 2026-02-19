@@ -18,8 +18,9 @@ RSpec.describe Selligent::Client::Cumulio do
     end
   end
 
-  describe '.cumulio_datasets' do
+  describe '.cumulio_query' do
     let(:model) { {} }
+
     it 'calls the correct endpoint' do
       client.cumulio_query(model)
 

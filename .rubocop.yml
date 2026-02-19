@@ -1,5 +1,9 @@
+plugins:
+  - rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 3.2
+  NewCops: disable
 
 Metrics/BlockLength:
   Exclude:
@@ -7,3 +11,6 @@ Metrics/BlockLength:
 
 Layout/LineLength:
   Max: 100
+
+RSpec/SubjectStub:
+  Enabled: false

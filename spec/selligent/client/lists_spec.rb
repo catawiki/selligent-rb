@@ -168,6 +168,7 @@ RSpec.describe Selligent::Client::Lists do
 
     describe '.update_relation' do
       let(:model) { {} }
+
       it 'calls the correct endpoint' do
         client.update_relation(list_name, scope, model)
 
@@ -182,6 +183,7 @@ RSpec.describe Selligent::Client::Lists do
   describe 'segments' do
     describe '.segments' do
       let(:options) { {} }
+
       it 'calls the correct endpoint' do
         client.segments(list_name, options)
 

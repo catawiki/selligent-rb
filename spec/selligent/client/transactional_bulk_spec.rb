@@ -3,9 +3,9 @@
 require 'spec_helper'
 
 RSpec.describe Selligent::Client::TransactionalBulk do
-  include_context 'base_client'
-
   subject(:client) { base_client.extend(described_class) }
+
+  include_context 'base_client'
 
   let(:base_url) { '/Portal/Api/organizations/my-org' }
 

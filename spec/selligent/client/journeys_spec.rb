@@ -2,14 +2,14 @@
 
 require 'spec_helper'
 
-RSpec.describe Selligent::Client::Status do
+RSpec.describe Selligent::Client::Journeys do
   include_context 'base_client'
 
-  describe '.status' do
+  describe '.journeys' do
     it 'calls the correct endpoint' do
-      client.status
+      client.journeys
 
-      expect(client).to have_received(:get).with("#{root_url}/Status")
+      expect(client).to have_received(:get).with("#{base_url}/journeys")
     end
   end
 end

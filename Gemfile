@@ -3,7 +3,8 @@
 source 'https://rubygems.org'
 
 group :development do
-  gem 'rubocop', '>= 0.49'
+  gem 'rubocop'
+  gem 'rubocop-rspec', require: false
   gem 'yard'
 end
 

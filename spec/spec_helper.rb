@@ -25,6 +25,7 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
 
+# rubocop:disable RSpec/ContextWording
 RSpec.shared_context 'base_client', shared_context: :metadata do
   subject(:client) { base_client.extend(described_class) }
 
@@ -43,6 +44,7 @@ RSpec.shared_context 'base_client', shared_context: :metadata do
     )
   end
 end
+# rubocop:enable RSpec/ContextWording
 
 RSpec.configure do |config|
   config.include_context 'base_client', include_shared: true

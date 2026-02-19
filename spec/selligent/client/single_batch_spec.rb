@@ -17,6 +17,7 @@ RSpec.describe Selligent::Client::SingleBatch do
 
   describe '.create_single_batch' do
     let(:model) { {} }
+
     it 'calls the correct endpoint' do
       client.create_single_batch(model)
 
@@ -57,6 +58,7 @@ RSpec.describe Selligent::Client::SingleBatch do
 
   describe '.trigger_single_batch' do
     let(:model) { {} }
+
     it 'calls the correct endpoint' do
       client.trigger_single_batch(batch_name, model)
 
