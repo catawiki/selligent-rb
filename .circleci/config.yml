@@ -12,6 +12,7 @@ jobs:
     docker:
       - image: cimg/ruby:<< parameters.ruby_version >>
         <<: *docker-auth
+    resource_class: medium.gen2
     steps:
       - checkout
       - restore_cache:
@@ -29,6 +30,7 @@ jobs:
     docker:
       - image: cimg/ruby:<< parameters.ruby_version >>
         <<: *docker-auth
+    resource_class: medium.gen2
     steps:
       - checkout
       - restore_cache:
